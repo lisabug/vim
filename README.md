@@ -8,7 +8,6 @@ This Version has those plugins:
 - YouCompleteMe
 - delimitMate
 - nerdtree
-- pyflakes-vim
 - python-syntax
 - syntastic
 - tagbar
