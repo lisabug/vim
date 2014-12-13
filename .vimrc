@@ -44,7 +44,7 @@ Bundle 'majutsushi/tagbar'
 "Python语法高亮
 Bundle 'hdima/python-syntax'
 "Python语法检查
-Bundle 'kevinw/pyflakes-vim'
+"Bundle 'kevinw/pyflakes-vim'
 
 
 
@@ -246,7 +246,7 @@ nmap <F8> :TagbarToggle<CR>
 
 
 " Python语法检查
-"let g:pyflakes_use_quickfix=0
+let g:pyflakes_use_quickfix=0
 
 "插件设置Finish
 "--------------------------------------------------------------------
@@ -275,7 +275,7 @@ function! AutoSetFileHead()
     "如果文件类型为python
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
-        call append(1, "\# encoding: utf-8")
+        call append(1, "\# -*- coding:utf-8 -*-")
     endif
 
     normal G
