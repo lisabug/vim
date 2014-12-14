@@ -251,6 +251,60 @@ let g:pyflakes_use_quickfix=0
 "插件设置Finish
 "--------------------------------------------------------------------
 
+
+" tab 操作
+" " TODO: ctrl + n 变成切换tab的方法
+" " http://vim.wikia.com/wiki/Alternative_tab_navigation
+" "
+" http://stackoverflow.com/questions/2005214/switching-to-a-particular-tab-in-vim
+" "map <C-2> 2gt
+map <leader>th :tabfirst<cr>
+map <leader>tl :tablast<cr>
+
+map <leader>tj :tabnext<cr>
+map <leader>tk :tabprev<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprev<cr>
+
+map <leader>te :tabedit<cr>
+map <leader>td :tabclose<cr>
+map <leader>tm :tabm<cr>
+
+
+" 新建tab  Ctrl+t
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+" TODO: 配置成功这里, 切换更方便, 两个键
+" nnoremap <C-S-tab> :tabprevious<CR>
+" nnoremap <C-tab>   :tabnext<CR>
+" inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+" inoremap <C-tab>   <Esc>:tabnext<CR>i
+" nnoremap <C-Left> :tabprevious<CR>
+" nnoremap <C-Right> :tabnext<CR>
+
+" normal模式下切换到确切的tab
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+" Toggles between the active and last active tab "
+" The first tab is always 1 "
+let g:last_active_tab = 1
+" nnoremap <leader>gt :execute 'tabnext ' . g:last_active_tab<cr>
+" nnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
+" vnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
+nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+vnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+autocmd TabLeave * let g:last_active_tab = tabpagenr()
+
+
 " Python 文件的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 
