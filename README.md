@@ -22,8 +22,10 @@ This Version has those plugins:
 2. `mv vim .vim`
 3. `ln -sf ~/.vim/.vimrc ~/.vimrc`
 4. Launch Vim and run `:PluginInstall`
-5. *YouCompleMe* need complie separately
+5. *YouCompleMe* need compile separately
 ```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 ``` 
+
+OK, let's Vim.
