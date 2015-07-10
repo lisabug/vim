@@ -21,8 +21,9 @@ This Version has those plugins:
 1. At home path `git clone https://github.com/lisabug/vim.git`
 2. `mv vim .vim`
 3. `ln -sf ~/.vim/.vimrc ~/.vimrc`
-4. Launch Vim and run `:PluginInstall`
-5. *YouCompleMe* need compile separately
+4. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+5. Launch Vim and run `:PluginInstall`
+6. *YouCompleMe* need compile separately
 ```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
