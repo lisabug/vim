@@ -17,7 +17,7 @@ This Version has those plugins:
 - vim-snippets
 
 ---
-##Usage:
+## Usage:
 1. At home path `git clone https://github.com/lisabug/vim.git`
 2. `mv vim .vim`
 3. `ln -sf ~/.vim/.vimrc ~/.vimrc`
