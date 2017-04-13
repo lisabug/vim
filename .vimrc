@@ -340,3 +340,6 @@ endfunc
 colorscheme molokai
 let g:molokai_original=1
 let g:rehash256=1
+if exists('$TMUX')
+    set term=screen-256color
+endif
