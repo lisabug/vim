@@ -14,22 +14,22 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundelVim/Vundle.vim'
 " Auto Completion
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Syntax Check
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Auto Comments
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Quotation, Brackets Completion
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 " DirectoryTree
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'szw/vim-ctrlspace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'szw/vim-ctrlspace'
 " Tagbar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 " Python Syntax Highlight
-Bundle 'hdima/python-syntax'
+Plugin 'hdima/python-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
