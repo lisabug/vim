@@ -12,7 +12,7 @@ call vundle#begin()
 " Refer to repo of Vundle on github
 " https://github.com/VundleVim/Vundle.vim
 " let Vundle manage Vundle, required
-Plugin 'VundelVim/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 " Auto Completion
 Plugin 'Valloric/YouCompleteMe'
 " Syntax Check
