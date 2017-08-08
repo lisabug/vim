@@ -17,16 +17,17 @@ This Version has those plugins:
 - vim-snippets
 
 ---
-##Usage:
-1. At home path `git clone https://github.com/lisabug/vim.git`
-2. `mv vim .vim`
-3. `ln -sf ~/.vim/.vimrc ~/.vimrc`
-4. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-5. Launch Vim and run `:PluginInstall`
-6. *YouCompleMe* need compile separately
+## Usage:
+1. At home path `git clone https://github.com/lisabug/vim.git .vim`
+2. `ln -sf ~/.vim/.vimrc ~/.vimrc`
+3. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+4. install Plugin from command line `vim +PluginInstall +qall`
+6. *YouCompleMe* need compile separately and depends on cmake
 ```
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+# on ubuntu, install cmake firstly
+# sudo apt-get install cmake
+./install.py --clang-completer
 ``` 
 
 OK, let's Vim.
