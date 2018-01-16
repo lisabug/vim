@@ -48,10 +48,12 @@ filetype plugin indent on    " required
 " Vundel Configure FINISH!!
 " --------------------------------------------------------------------------
 " ** Vundle END **
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " Vim basic setting
-let g:mapleader=','
-let mapleader=','
+let g:mapleader=';'
+let mapleader=';'
 
 " 开启语法高亮
 syntax on
