@@ -173,16 +173,11 @@ let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
 let g:ycm_complete_in_comments=1
 let g:ycm_complete_in_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=0
-<<<<<<< HEAD
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-
-=======
 "let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 "let g:syntastic_check_on_open=1
 "let g:syntastic_enable_signs=1
 "let g:syntastic_cpp_check_header = 1
 "let g:syntastic_cpp_remove_include_errors = 1
->>>>>>> c600ae8e8b04c5568dec6756724808eb5da66c38
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>	"force recompile with syntastic
 inoremap <leader><leader> <C-x><C-o>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
@@ -214,7 +209,6 @@ nmap <F8> :TagbarToggle<CR>
 " Python语法检查
 let g:pyflakes_use_quickfix=0
 
-<<<<<<< HEAD
 " Syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -225,7 +219,6 @@ let g:pyflakes_use_quickfix=0
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_python_checkers=['pylint']
 " let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
-=======
 "" Indent guides
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
@@ -238,7 +231,6 @@ let g:indent_guides_guide_size=1
 
 "" *.cpp 和 *.h 间切换
 nmap <silent> <Leader>sw :FSHere<cr>
->>>>>>> c600ae8e8b04c5568dec6756724808eb5da66c38
 
 "插件设置Finish
 "--------------------------------------------------------------------
