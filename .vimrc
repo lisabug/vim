@@ -161,10 +161,7 @@ let g:ycm_complete_in_comments=1
 let g:ycm_complete_in_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=0
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-"let g:syntastic_check_on_open=1
-"let g:syntastic_enable_signs=1
-"let g:syntastic_cpp_check_header = 1
-"let g:syntastic_cpp_remove_include_errors = 1
+
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>	"force recompile with syntastic
 inoremap <leader><leader> <C-x><C-o>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
@@ -186,8 +183,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinSize=25
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git$']
-map <F7> :NERDTreeToggle<CR>
-imap <F7> <ESC> :NERDTreeToggle<CR>
+map <F7> :NERDTreeTabsToggle<CR>
+imap <F7> <ESC> :NERDTreeTabsToggle<CR>
 
 
 " Tagbar
@@ -196,6 +193,17 @@ nmap <F8> :TagbarToggle<CR>
 
 " Python语法检查
 let g:pyflakes_use_quickfix=0
+
+" Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers=['pylint']
+" let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
 
 "插件设置Finish
 "--------------------------------------------------------------------
