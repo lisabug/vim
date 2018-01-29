@@ -30,6 +30,8 @@ Plugin 'szw/vim-ctrlspace'
 Plugin 'majutsushi/tagbar'
 " Python Syntax Highlight
 Plugin 'hdima/python-syntax'
+" CMake syntax
+Plugin 'pboettch/vim-cmake-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -160,7 +162,7 @@ let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
-"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:syntastic_check_on_open=1
 "let g:syntastic_enable_signs=1
 "let g:syntastic_cpp_check_header = 1
