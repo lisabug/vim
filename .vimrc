@@ -1,5 +1,5 @@
 " Vim Configuration of Yuanqin Lu
-" Last Update: 2017.04.13
+" Last Update: 2018.01.16
 
 " ** Vundle BEGIN **
 set nocompatible              " be iMproved, required
@@ -32,6 +32,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'hdima/python-syntax'
 " CMake syntax
 Plugin 'pboettch/vim-cmake-syntax'
+" C++ syntax enhancement
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Indent enhancement
+Plugin 'nathanaelkane/vim-indent-guides'
+" CXX and HXX fast switch
+Plugin 'derekwyatt/vim-fswitch'
+" Fast comments
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,12 +58,15 @@ filetype plugin indent on    " required
 " Vundel Configure FINISH!!
 " --------------------------------------------------------------------------
 " ** Vundle END **
+" 让配置变更立即生效
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC
 
 " Vim basic setting
-let g:mapleader=','
-let mapleader=','
+let g:mapleader=';'
+let mapleader=';'
 
 " 开启语法高亮
+syntax enable
 syntax on
 " 文件类型检查
 filetype on
@@ -78,7 +89,15 @@ set showcmd
 set showmode
 " 显示行号
 set number
+" Statusline
+set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" Always show the status line - use 2 lines for the status bar
 set laststatus=2
+" Highlight current line or column
+set cursorline
+" set cursorcolumn
+
+set shortmess+=c
 
 " 高亮search命中的文本
 set hlsearch
@@ -108,10 +127,6 @@ set wildmenu
 set wildmode=list:longest
 set ttyfast
 
-" Statusline
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-" Always show the status line - use 2 lines for the status bar
-set laststatus=2
 
 " 设置新文件的编码为 UTF-8
 set encoding=utf-8
@@ -128,8 +143,6 @@ set ffs=unix
 set formatoptions+=m
 " 合并两行中文时，不在中间加空格：
 set formatoptions+=B
-
-autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
 cnoremap <C-j> <t_kd>
@@ -159,10 +172,10 @@ let g:ycm_collect_identifiers_from_tags_files=1	" 开启 YCM 基于标签引擎
 let g:ycm_min_num_of_chars_for_completion=2	" 从第2个键入字符就开始罗列匹配项
 let g:ycm_cache_omnifunc=0	" 禁止缓存匹配项,每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_complete_in_comments=1
+let g:ycm_complete_in_strings=1
+let g:ycm_collect_identifiers_from_comments_and_strings=0
+"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 "let g:syntastic_check_on_open=1
 "let g:syntastic_enable_signs=1
 "let g:syntastic_cpp_check_header = 1
@@ -171,11 +184,10 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>	"force recompile with syntastic
 inoremap <leader><leader> <C-x><C-o>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
 
-
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -188,8 +200,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinSize=25
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git$']
-map <F7> :NERDTreeToggle<CR>
-imap <F7> <ESC> :NERDTreeToggle<CR>
+map <F7> :NERDTreeTabsToggle<CR>
+imap <F7> <ESC> :NERDTreeTabsToggle<CR>
 
 
 " Tagbar
@@ -198,6 +210,29 @@ nmap <F8> :TagbarToggle<CR>
 
 " Python语法检查
 let g:pyflakes_use_quickfix=0
+
+" Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers=['pylint']
+" let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
+"" Indent guides
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+"" *.cpp 和 *.h 间切换
+nmap <silent> <Leader>sw :FSHere<cr>
 
 "插件设置Finish
 "--------------------------------------------------------------------
