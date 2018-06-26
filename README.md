@@ -15,6 +15,10 @@ This Version has those plugins:
 - vim-ctrlspace
 - vim-nerdtree-tabs
 - vim-snippets
+- vim-cpp-enhance-highlight
+- vim-indent-guides
+- vim-fswitch
+- nerdcommenter
 
 ---
 ## Usage:

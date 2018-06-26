@@ -30,6 +30,8 @@ Plugin 'szw/vim-ctrlspace'
 Plugin 'majutsushi/tagbar'
 " Python Syntax Highlight
 Plugin 'vim-python/python-syntax'
+" CMake syntax
+Plugin 'pboettch/vim-cmake-syntax'
 " C++ syntax enhancement
 Plugin 'octol/vim-cpp-enhanced-highlight'
 " Indent enhancement
