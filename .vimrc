@@ -29,7 +29,7 @@ Plugin 'szw/vim-ctrlspace'
 " Tagbar
 Plugin 'majutsushi/tagbar'
 " Python Syntax Highlight
-Plugin 'hdima/python-syntax'
+Plugin 'vim-python/python-syntax'
 " C++ syntax enhancement
 Plugin 'octol/vim-cpp-enhanced-highlight'
 " Indent enhancement
@@ -208,6 +208,9 @@ nmap <F8> :TagbarToggle<CR>
 
 " Python语法检查
 let g:pyflakes_use_quickfix=0
+
+" Python syntax highlight
+let g:python_highlight_all = 1
 
 " Syntastic
 " set statusline+=%#warningmsg#
